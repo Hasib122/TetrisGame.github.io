@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tetris game in JavaScript">
+  <meta name="Authors" content="Hasib Subasic, Paul Dennis, Mersed Subasic and Pardeep Takhar">
+  <title>Tetris</title>
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<!--
+    This is the main HTML file for Tetris game
+  -->
+
+<body>
+  <div class="box">
+    <canvas id="tetrisboard" class="tetris-game-board"></canvas>
+
+    <div class="info-board">
+      <h1>TETRIS</h1>
+      <button onclick="play_tetris()"  class="play-button">Play</button>
+      <button onclick="pause_tetris()" class="pause-button">Pause</button>
+
+      <p>User: x Score: <span id="score">0</span></p>
+      <p>Highest Score: <span id="level">0</span></p>
+
+      <div class="upcoming">
+        <p>Upcoming: <span id="upcoming"></span></p>
+        <canvas id="tetrisnext" class="tetris-next"></canvas>
+      </div>
+
+      
+        <div>
+          <ul>
+            <li>
+              <a href="howtoplay.html">How to Play</a>
+            </li>
+            <li>
+              <a href="profile.html">Profile</a>
+            </li>
+            <li>
+              <a href="../firebase/login.html">Login</a>
+            </li>
+    </div>
+
+  </div>
+
+
+  <!--
+<div class="tetrisgrid">
+    <canvas id="tetrisboard" class="tetris-game-board"></canvas>
+    <div class="tetris-right-column">
+      <div>
+        <h1>Tetris</h1>
+        <p>Score: <span id="score">0</span></p>
+        <p>Lines: <span id="lines">0</span></p>
+        <p>Level: <span id="level">0</span></p>
+        <canvas id="tetrisnext" class="tetris-next"></canvas>
+      </div>
+      <button onclick="play_tetris()" class="play-button">Play</button>
+    </div>
+  </div> -->
+</body>
+
+<script type="application/javascript" src="../src/tetris_constants.js" defer></script>
+<script type="application/javascript" src="../src/tetris_board.js"     defer></script>
+<script type="application/javascript" src="../src/tetris_piece.js"     defer></script>
+<script type="application/javascript" src="../src/tetris_main.js"      defer></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script>
+       
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDvPpc-1bT0OqmfkRH4nowl-7ffP140yww",
+    authDomain: "finaltetrisgamelogin.firebaseapp.com",
+    databaseURL: "https://finaltetrisgamelogin-default-rtdb.firebaseio.com",
+    projectId: "finaltetrisgamelogin",
+    storageBucket: "finaltetrisgamelogin.appspot.com",
+    messagingSenderId: "323557137776",
+    appId: "1:323557137776:web:0a896cdea2d42c0e5083b5",
+    measurementId: "G-EGB8S4KWPR"
+    };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  //auth and firestore references
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  const user = auth.currentUser;
+  db.settings({timestampsInSnapshots: true});
+</script>
+<script src="app.js"></script>
+</html>

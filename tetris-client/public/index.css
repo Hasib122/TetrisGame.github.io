@@ -1,0 +1,44 @@
+.box {
+  display: flex;
+  /* grid-template-columns: 1fr 1fr; */
+  padding: 1vh;
+  font-size: 20px;
+}
+
+/* Tetris Board */
+.tetris-game-board {
+  border: solid 4px black;
+  align-items: end;
+}
+
+/* Info Board */
+.info-board {
+  padding: 10px;
+}
+
+.upcoming {
+  height: 260px;
+  width: 230px;
+  border: solid 3px black;
+  ;
+}
+
+.play-button {
+  width: 120px;
+  background-color: green;
+  cursor: pointer;
+}
+
+.pause-button {
+  width: 120px;
+  background-color: red;
+  cursor: pointer;
+}
+
+/* a {
+  font-size: 40px;
+  text-decoration: none;
+  color: black;
+  display: table-caption;
+
+} */
